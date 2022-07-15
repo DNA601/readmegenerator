@@ -7,23 +7,50 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
-const questions = ['What is the project Title?', 'Describe the project'];
+const questions = [{
+        type: 'input',
+        message: 'What is the project Title?',
+        name: 'title',
+    },
+    {
+        type: 'input',
+        message: 'Describe the project',
+        name: 'description',
+    },
+    {
+        type: 'input',
+        message: 'installation',
+        name: 'install',
+    },
+    {
+        type: 'input',
+        message: 'Contributor guidlines',
+        name: 'con',
+    },
+    {
+        type: 'input',
+        message: 'Owner',
+        name: 'own',
+    },
+    {
+        type: 'input',
+        message: 'Usage Information',
+        name: 'usage',
+    },
+    {
+        type: 'input',
+        message: 'Test instruction',
+        name: 'testIn',
+    },
+    {
+        type: 'input',
+        message: 'License',
+        name: 'lic',
+    },
+];
 
 function addTitle() {
-    inquirer.prompt([
-
-            {
-                type: 'input',
-                message: 'What is the title?',
-                name: 'title',
-            },
-            {
-                type: 'input',
-                message: 'Describe the project',
-                name: 'description',
-            },
-
-        ])
+    inquirer.prompt(questions)
         .then(function(data) {
             console.log(data)
             const fileN = 'README.md'

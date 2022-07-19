@@ -13,6 +13,13 @@ const questions = [{
         name: 'title',
     },
     {
+        type: 'checkbox',
+        message: 'What is the license',
+        name: 'license',
+        choices: ['MIT', 'ISC', 'BSD', ]
+
+    },
+    {
         type: 'input',
         message: 'Describe the project',
         name: 'description',
@@ -42,11 +49,8 @@ const questions = [{
         message: 'Test instruction',
         name: 'testIn',
     },
-    {
-        type: 'input',
-        message: 'License',
-        name: 'lic',
-    },
+
+
 ];
 
 function addTitle() {
